@@ -1,0 +1,68 @@
+.gameboard {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#water1 {
+    position: fixed;
+    width: 480px;
+    height: auto;
+    top: 0px;
+	left: 0px;
+    image-rendering: pixelated;
+}
+
+#water2 {
+    position: fixed;
+    width: 480px;
+    height: auto;
+    top: 0px;
+	left: 500px;
+    image-rendering: pixelated;
+}
+
+#piecenum {
+    position: fixed;
+	width: 500px;
+	height: 50px; 
+	top: 500px;
+	left: 30px;
+	text-align: left;
+	font: 20px Arial;
+	text-indent: 60px;
+	color: #3F3F3F;
+}
+
+#flip {
+    position: fixed;
+	width: 500px;
+	height: 50px; 
+	top: 500px;
+	left: 200px;
+	text-align: left;
+	font: 20px Arial;
+	text-indent: 60px;
+	color: #3F3F3F;
+}
+
+#hitmiss {
+    position: fixed;
+	width: 500px;
+	height: 50px; 
+	top: 500px;
+	left: 660px;
+	text-align: left;
+	font: 20px Arial;
+	text-indent: 60px;
+	color: #3F3F3F;
+}
+
+#boatpic {
+    position: fixed;
+    width: 64px;
+    height: auto;
+    top: 540px;
+	left: 60px;
+    image-rendering: pixelated;
+}
