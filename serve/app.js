@@ -5,6 +5,7 @@ var board2 = new Array(10); // board2 array
 var piecenum = document.getElementById("piecenum");
 var flip = document.getElementById("flip");
 var hit = document.getElementById("hitmiss");
+var hover = document.getElementById("hover");
 var flipd = 0;
 var nxtpiece = 1;
 const boatsize = [2, 3, 3, 4, 5];
@@ -22,6 +23,7 @@ var updatetext = function() {
         flip.innerHTML = "";
         var b = document.getElementById("boatpic");
         b.src = "files/empty5.png";
+        hover.src = "files/empty5.png";
 
     } else {
         piecenum.innerHTML = "Piece: "+ nxtpiece;
@@ -99,6 +101,33 @@ for (let i = 0; i < 10; i++) {
             place(parseInt(e.target.id.slice(2, e.target.id.length)))
         });
 
+        plot1.addEventListener("mouseover", function(e) {
+            //console.log(parseInt(e.target.id.slice(2, e.target.id.length)));
+
+            if (nxtpiece>5)
+                return;
+
+            var locat = document.getElementById("p1"+parseInt(e.target.id.slice(2, e.target.id.length)));
+            let piece = locat.getBoundingClientRect();
+
+            hover.src = "files/boatp"+nxtpiece+".png";
+            hover.style.position = 'fixed'
+            hover.style.width = boatsize[nxtpiece-1]*16*3+'px';
+            hover.style.height = 'auto';
+            hover.style.top = piece.top +'px';
+            hover.style.left = piece.left +'px';
+            hover.style.imageRendering = 'pixelated';
+            hover.style.pointerEvents = 'none';
+            hover.style.transform = 'rotate(0deg)';
+
+            if (flipd == 1) {
+                hover.style.transformOrigin = 'top left';
+                hover.style.transform = 'rotate(-90deg)';
+                hover.style.top = (piece.top+48)+'px';
+            }
+            //grid.appendChild(boat);
+        });
+
         plot2.addEventListener("click", function(e) {
             //console.log(e.target.id.slice(2, e.target.id.length));
             p = parseInt(e.target.id.slice(2, e.target.id.length));
@@ -133,13 +162,11 @@ var place = function(z) {
     boat.style.position = 'fixed'
     boat.style.width = boatsize[nxtpiece-1]*16*3+'px';
     boat.style.height = 'auto';
-
-    console.log(boatsize[nxtpiece-1]*16);
-    console.log(nxtpiece);
-
     boat.style.top = piece.top +'px';
     boat.style.left = piece.left +'px';
-    boat.style.imageRendering = 'pixelated'
+    boat.style.imageRendering = 'pixelated';
+    boat.style.pointerEvents = 'none';
+
 
     if (flipd == 1) {
         boat.style.transformOrigin = 'top left';
