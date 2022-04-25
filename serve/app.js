@@ -12,7 +12,7 @@ const boatsize = [2, 3, 3, 4, 5];
 
 
 var updatetext = function() {
-    piecenum.innerHTML = "Piece: "+ nxtpiece;
+    piecenum.innerHTML = "PIECE: "+ nxtpiece;
     
     if (nxtpiece>5) {
         for (let i = 0; i < 100; i++) {
@@ -23,18 +23,19 @@ var updatetext = function() {
         flip.innerHTML = "";
         var b = document.getElementById("boatpic");
         b.src = "files/empty5.png";
+        b.style.width = "0px";
         hover.src = "files/empty5.png";
 
     } else {
-        piecenum.innerHTML = "Piece: "+ nxtpiece;
+        piecenum.innerHTML = "PIECE: "+ nxtpiece;
         var b = document.getElementById("boatpic");
-        b.src = "files/boats"+nxtpiece+".png";
-        b.style.width = boatsize[nxtpiece-1]*16*3+'px';
+        b.src = "files/boatn"+nxtpiece+".png";
+        b.style.width = boatsize[nxtpiece-1]*16*5+'px';
 
         if (flipd== 0) {
-           flip.innerHTML="Horizontal"
+           flip.innerHTML="HORIZONTAL"
         } else {
-           flip.innerHTML="Vertical"
+           flip.innerHTML="VERTICAL"
         }
     }
 }
@@ -77,7 +78,7 @@ for (let i = 0; i < 10; i++) {
 	    var plot1 = document.createElement("img");
 	    plot1.src = "files/empty4.png";
         plot1.id = "p1"+cnt;
-        plot1.style.position = 'fixed'
+        plot1.style.position = 'absolute'
         plot1.style.width = '48px';
         plot1.style.height = 'auto';
         plot1.style.top = 0 + (48*i) +'px';
@@ -89,7 +90,7 @@ for (let i = 0; i < 10; i++) {
         var plot2 = document.createElement("img");
 	    plot2.src = "files/empty.png";
         plot2.id = "p2"+cnt;
-        plot2.style.position = 'fixed'
+        plot2.style.position = 'absolute'
         plot2.style.width = '48px';
         plot2.style.height = 'auto';
         plot2.style.top = 0 + (48*i) +'px';
@@ -107,15 +108,18 @@ for (let i = 0; i < 10; i++) {
             if (nxtpiece>5)
                 return;
 
+            var bboard = document.getElementById("gameboard").getBoundingClientRect();
             var locat = document.getElementById("p1"+parseInt(e.target.id.slice(2, e.target.id.length)));
             let piece = locat.getBoundingClientRect();
 
+            offsett = piece.top - bboard.top;
+            offsetl = piece.left - bboard.left;
             hover.src = "files/boatp"+nxtpiece+".png";
-            hover.style.position = 'fixed'
+            hover.style.position = 'absolute'
             hover.style.width = boatsize[nxtpiece-1]*16*3+'px';
             hover.style.height = 'auto';
-            hover.style.top = piece.top +'px';
-            hover.style.left = piece.left +'px';
+            hover.style.top = offsett +'px';
+            hover.style.left = offsetl +'px';
             hover.style.imageRendering = 'pixelated';
             hover.style.pointerEvents = 'none';
             hover.style.transform = 'rotate(0deg)';
@@ -123,7 +127,7 @@ for (let i = 0; i < 10; i++) {
             if (flipd == 1) {
                 hover.style.transformOrigin = 'top left';
                 hover.style.transform = 'rotate(-90deg)';
-                hover.style.top = (piece.top+48)+'px';
+                hover.style.top = (offsett+48)+'px';
             }
             //grid.appendChild(boat);
         });
@@ -134,10 +138,10 @@ for (let i = 0; i < 10; i++) {
             console.log(board2[Math.floor(p/10)][p%10]);
             if (board2[Math.floor(p/10)][p%10] == 1) {
                 e.target.src = "files/empty2.png";
-                hit.innerHTML="Hit!"
+                hit.innerHTML="HIT!"
             } else {
                 e.target.src = "files/empty3.png";
-                hit.innerHTML="Miss!"
+                hit.innerHTML="MISS!"
             }
         });
 
@@ -152,26 +156,28 @@ var place = function(z) {
     if (nxtpiece>5) 
         return;
     
-
+    var bboard = document.getElementById("gameboard").getBoundingClientRect();
     var locat = document.getElementById("p1"+z);
     let piece = locat.getBoundingClientRect();
 
+    offsett = piece.top - bboard.top;
+    offsetl = piece.left - bboard.left;
     var boat = document.createElement("img");
     boat.src = "files/boats"+nxtpiece+".png";
     boat.id = "boat";
-    boat.style.position = 'fixed'
+    boat.style.position = 'absolute'
     boat.style.width = boatsize[nxtpiece-1]*16*3+'px';
     boat.style.height = 'auto';
-    boat.style.top = piece.top +'px';
-    boat.style.left = piece.left +'px';
+    boat.style.top = offsett + 'px';
+    boat.style.left = offsetl +'px';
     boat.style.imageRendering = 'pixelated';
     boat.style.pointerEvents = 'none';
 
-
+    hover.src = "files/empty5.png";
     if (flipd == 1) {
         boat.style.transformOrigin = 'top left';
         boat.style.transform = 'rotate(-90deg)';
-        boat.style.top = (piece.top+48)+'px';
+        boat.style.top = (offsett+48)+'px';
     }
     grid.appendChild(boat);
 
