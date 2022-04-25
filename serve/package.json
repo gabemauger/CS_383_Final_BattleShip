@@ -1,15 +1,15 @@
 {
-  "name": "battleship_game",
+  "name": "serve",
   "version": "1.0.0",
-  "description": "Final Project for CS 383 - Modern Web Design",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node.js": "^0.0.1-security",
-    "socket.io": "^4.4.1"
+    "express.io": "^1.1.8",
+    "socket.io": "^4.5.0"
   }
 }
