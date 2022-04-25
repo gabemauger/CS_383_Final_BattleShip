@@ -12,6 +12,7 @@
         <div id="bg"> </div>
 
         <div id="gameboard">
+            <div id="place"> PLACE YOUR SHIPS!</div>
             <div class="grid player1">
                 <div id="grid1"> </div>
                 <img id="hover"></img>
@@ -22,6 +23,7 @@
 
             <p1 id="piecenum">PIECE: </p1>
             <p1 id="flip">HORIZONTAL</p1>
+            <p1 id="turn"></p1>
             <p1 id="hitmiss"></p1>
             <img id="boatpic" src="files/boatn1.png">
         </div>
@@ -43,5 +45,6 @@
         </div>
 
     </body>
+    <script src='/socket.io/socket.io.js'></script>
     <script src="app.js"></script>
 </html>

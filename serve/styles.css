@@ -246,11 +246,37 @@ html, body {
 	color: #51DB5C;
 }
 
+#place {
+    position: absolute;
+	width: 500px;
+	height: 50px; 
+	top: -80px;
+	left: -40px;
+	text-align: center;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 40px;	
+	text-indent: 60px;
+	color: #51DB5C;
+}
+
+#turn {
+    position: absolute;
+	width: 500px;
+	height: 50px; 
+	top: 570px;
+	left: 460px;
+	text-align: center;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 40px;	
+	text-indent: 60px;
+	color: #51DB5C;
+}
+
 #boatpic {
     position: absolute;
     width: 64px;
     height: auto;
-    top: 670px;
+    top: 640px;
 	left: 240px;
     transform:translate(-50%,-50%);
     image-rendering: pixelated;
