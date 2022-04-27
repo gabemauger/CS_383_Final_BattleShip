@@ -1,0 +1,461 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 900px;
+	background-color: #383838;
+}
+
+#bodybg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("files/water.png");
+	width: 100%;
+	height: 900px;
+}
+
+#header {
+	position: absolute;
+    width: 100%;
+	height: 70px;
+	top: 0px;
+	margin: 0px;
+	padding: 0px;
+	background-color: #212121;
+	
+}
+
+#title {
+	position: absolute;
+	top: 20px;
+	text-align: left;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 40px;
+	text-indent: 60px;
+	text-align: left;
+	color: #51DB5C;
+}
+
+#headboat {
+	position: absolute;
+	width: 128px;
+ 	height: auto;
+	top: 5px;
+	left: 290px;
+	image-rendering: pixelated;
+}
+
+#header2 {
+	position: absolute;
+    width: 100%;
+	height: 30px;
+	top: 70px;
+	margin: 0px;
+	padding: 0px;
+	background-color: #383838;
+	border-style: solid;
+	border-color: #51DB5C;
+	border-width: 1px;
+	border-left-style: hidden;
+	border-right-style: hidden;
+}
+
+#login {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	height: 20px;
+	width: 70px;
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	border-top-style: hidden;
+	border-bottom-style: hidden;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: white;
+}
+
+#reg {
+	position: absolute;
+	top: 5px;
+	left: 75px;
+	height: 20px;
+	width: 70px;
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	border-top-style: hidden;
+	border-bottom-style: hidden;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: white;
+}
+
+#gamekey {
+	position: absolute;
+	top: 5px;
+	left: calc(100% - 370px);
+	height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: white;
+}
+
+#key {
+	position: absolute;
+	top: 2px;
+	left: calc(100% - 270px);
+	height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: #51DB5C;
+	background-color: #212121;
+}
+
+#but1 {
+	position: absolute;
+	top: 18px;
+	left: calc(100% - 460px);
+	height: 30px;
+	width: 150px;
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	border-top-style: hidden;
+	border-bottom-style: hidden;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+#but2 {
+	position: absolute;
+	top: 18px;
+	left: calc(100% - 310px);
+	height: 30px;
+	width: 150px;
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	border-top-style: hidden;
+	border-bottom-style: hidden;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+#but3 {
+	position: absolute;
+	top: 18px;
+	left: calc(100% - 160px);
+	height: 30px;
+	width: 150px;
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	border-top-style: hidden;
+	border-bottom-style: hidden;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+#gameboard {
+	position: absolute;
+    width: 600px;
+	height: 490px;
+	top: 480px;
+	left: calc(50% - 485px);
+	background-color: #212121;
+}
+
+#bg {
+	position: absolute;
+    width: 600px;
+	left: calc(50% - 300px);
+	top: 0;
+	height: 900px;
+	background-color: #383838;
+	border-style: solid;
+	border-color: #51DB5C;
+	border-width: 5px;
+	border-top-style: hidden;
+	border-bottom-style: hidden;
+}
+
+#inputbg {
+    position: absolute;
+    width: 450px;
+    left: calc(50% - 225px);
+    top: 200px;
+    height: 600px;
+    background-color: #212121;
+	border-style: solid;
+	border-color: #51DB5C;
+	border-width: 1px;
+}
+
+#submit {
+	position: absolute;
+	top: 670px;
+	width: 100px;
+	left: calc(50% - 50px);
+	height: 25px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: #51DB5C;
+	background-color: #383838;
+}
+
+#usertxt {
+    position: absolute;
+    top: 430px;
+    left: calc(50% - 150px);
+    height: 20px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 15px;
+    color: #51DB5C;
+}
+
+#passtxt {
+    position: absolute;
+    top: 630px;
+    left: calc(50% - 150px);
+    height: 20px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 15px;
+    color: #51DB5C;
+}
+
+#regtext {
+    position: absolute;
+    top: 730px;
+    left: calc(50% - 150px);
+    height: 20px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 12px;
+    color: #727272;
+}
+
+#logint {
+    position: absolute;
+    top: 330px;
+    left: calc(50% - 150px);
+    height: 20px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 40px;
+    color: #51DB5C;
+}
+
+#user {
+	position: absolute;
+	top: 400px;
+	width: 400px;
+	left: calc(50% - 200px);
+	height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: #51DB5C;
+	background-color: #383838;
+}
+
+#user:invalid {
+	position: absolute;
+	top: 400px;
+	width: 400px;
+	left: calc(50% - 200px);
+	height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: #ff0000;
+	background-color: #383838;
+}
+
+#pass:invalid {
+	position: absolute;
+	top: 600px;
+	width: 400px;
+	left: calc(50% - 200px);
+	height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: #ff0000;
+	background-color: #383838;
+}
+
+#pass {
+	position: absolute;
+	top: 600px;
+	width: 400px;
+	left: calc(50% - 200px);
+	height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: #51DB5C;
+	background-color: #383838;
+}
+
+#email:invalid {
+	position: absolute;
+	top: 500px;
+	width: 400px;
+	left: calc(50% - 200px);
+	height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: #ff0000;
+	background-color: #383838;
+}
+
+#email {
+	position: absolute;
+	top: 500px;
+	width: 400px;
+	left: calc(50% - 200px);
+	height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 15px;
+	color: #51DB5C;
+	background-color: #383838;
+}
+
+#footer {
+	position: absolute;
+    width: 100%;
+	height: 30px;
+	top: 870px;
+	margin: 0px;
+	padding: 0px;
+	background-color: #212121;
+}
+
+#foottext {
+	position: absolute;
+	top: 7px;
+	width: 100%;
+	text-align: center;
+	align-items: center;
+	font-size: 15px;
+	color: white;
+}
+
+#water1 {
+    position: absolute;
+    width: 480px;
+    height: auto;
+    top: 0px;
+	left: 0px;
+    image-rendering: pixelated;
+}
+
+#water2 {
+    position: absolute;
+    width: 480px;
+    height: auto;
+    top: 0px;
+	left: 500px;
+    image-rendering: pixelated;
+}
+
+#piecenum {
+    position: absolute;
+	width: 500px;
+	height: 50px; 
+	top: 500px;
+	left: -40px;
+	text-align: left;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 40px;
+	text-indent: 60px;
+	color: #51DB5C;
+}
+
+#flip {
+    position: absolute;
+	width: 500px;
+	height: 50px; 
+	top: 500px;
+	left: 75px;
+	text-align: center;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 40px;
+	text-indent: 60px;
+	color: #51DB5C;
+}
+
+#hitmiss {
+    position: absolute;
+	width: 500px;
+	height: 50px; 
+	top: 500px;
+	left: 460px;
+	text-align: center;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 40px;	
+	text-indent: 60px;
+	color: #51DB5C;
+}
+
+#place {
+    position: absolute;
+	width: 500px;
+	height: 50px; 
+	top: -80px;
+	left: -40px;
+	text-align: center;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 40px;	
+	text-indent: 60px;
+	color: #51DB5C;
+}
+
+#turn {
+    position: absolute;
+	width: 500px;
+	height: 50px; 
+	top: 570px;
+	left: 460px;
+	text-align: center;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 40px;	
+	text-indent: 60px;
+	color: #51DB5C;
+}
+
+#boatpic {
+    position: absolute;
+    width: 64px;
+    height: auto;
+    top: 640px;
+	left: 240px;
+    transform:translate(-50%,-50%);
+    image-rendering: pixelated;
+}
+
+#loginimg {
+	position: absolute;
+    width: 256px;
+    height: auto;
+    top: 270px;
+    left: 300px;
+	transform:translate(-50%,-50%);
+    image-rendering: pixelated;
+}
