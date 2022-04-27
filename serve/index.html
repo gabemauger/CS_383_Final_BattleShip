@@ -3,10 +3,16 @@
     <head>
         <title>BattleShip</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <div class="gameboard">
+        <div id="bodybg"> </div>
+        <div id="bg"> </div>
+
+        <div id="gameboard">
+            <div id="place"> PLACE YOUR SHIPS!</div>
             <div class="grid player1">
                 <div id="grid1"> </div>
                 <img id="hover"></img>
@@ -15,12 +21,61 @@
                 <div id="grid2"> </div>
             </div>
 
-            <p1 id="piecenum">Piece: </p1>
-            <p1 id="flip">Horizontal</p1>
+            <p1 id="piecenum">PIECE: </p1>
+            <p1 id="flip">HORIZONTAL</p1>
+            <p1 id="turn"></p1>
             <p1 id="hitmiss"></p1>
-            <img id="boatpic" src="files/boats1.png">
-
+            <img id="boatpic" src="files/boatn1.png">
         </div>
+
+        <div id="footer">
+            <div id="foottext">BATTLESHIP GAME MADE BY GABE MAUGER, ISMAEL PARRA, ISAAC APOLONIO DURAN, LEVI LOPEZ (2022)</div>
+        </div>
+
+        <div id="header">
+            <div id="title"> BATTLESHIP</div>
+            <div id="but1">HOME</div>
+            <div id="but2">PLAY</div>
+            <div id="but3">LEADERBOARD</div>
+            <img id="headboat" src="files/boat1.png">
+        </div>
+        <div id="header2">
+            <div id="login"> Login</div>
+            <div id="reg"> Register</div>
+            <div id="gamekey">Game key: </div>
+            <input type="text" id="key" name="key" placeholder="12345"><br><br>
+            <input type="submit" id="submit">	
+        </div>
+
     </body>
+    <script>
+        var home = document.getElementById("but1");
+        var play = document.getElementById("but2");
+        var lead = document.getElementById("but3");
+        var log = document.getElementById("login");
+        var regi = document.getElementById("reg");
+
+        home.addEventListener("click", function(e) {
+            window.location.href = '/home.html';
+        });
+
+        play.addEventListener("click", function(e) {
+            window.location.href = '/index.html';
+        });
+
+        lead.addEventListener("click", function(e) {
+            window.location.href = '/lead.html';
+        });
+
+        log.addEventListener("click", function(e) {
+            window.location.href = '/log.html';
+        });
+
+        regi.addEventListener("click", function(e) {
+            window.location.href = '/regi.html';
+        });
+
+    </script>
+    <script src='/socket.io/socket.io.js'></script>
     <script src="app.js"></script>
 </html>
