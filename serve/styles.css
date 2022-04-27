@@ -94,6 +94,7 @@ html, body {
 	color: white;
 }
 
+<<<<<<< HEAD
 #gamekey {
 	position: absolute;
 	top: 5px;
@@ -125,11 +126,17 @@ html, body {
 	color: #51DB5C;
 	background-color: #212121;
 }
+=======
+>>>>>>> 38219bad8eb98ca658aa36f318896c2c26a3c689
 
 #but1 {
 	position: absolute;
 	top: 18px;
+<<<<<<< HEAD
 	left: calc(100% - 460px);
+=======
+	left: 1100px;
+>>>>>>> 38219bad8eb98ca658aa36f318896c2c26a3c689
 	height: 30px;
 	width: 150px;
 	text-align: center;
@@ -146,7 +153,11 @@ html, body {
 #but2 {
 	position: absolute;
 	top: 18px;
+<<<<<<< HEAD
 	left: calc(100% - 310px);
+=======
+	left: 1250px;
+>>>>>>> 38219bad8eb98ca658aa36f318896c2c26a3c689
 	height: 30px;
 	width: 150px;
 	text-align: center;
@@ -163,7 +174,11 @@ html, body {
 #but3 {
 	position: absolute;
 	top: 18px;
+<<<<<<< HEAD
 	left: calc(100% - 160px);
+=======
+	left: 1400px;
+>>>>>>> 38219bad8eb98ca658aa36f318896c2c26a3c689
 	height: 30px;
 	width: 150px;
 	text-align: center;

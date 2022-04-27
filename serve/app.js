@@ -12,6 +12,7 @@ window.onload = function() {
     var nxtpiece = 1;
     const boatsize = [2, 3, 3, 4, 5];
     var socket = io();
+<<<<<<< HEAD
     var sub = document.getElementById("submit");
 
     sub.addEventListener("click", function(e) {
@@ -49,6 +50,38 @@ window.onload = function() {
         turntxt.innerHTML = "";
     });
 
+=======
+    
+    socket.on('sendarray', function(data) {
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                  board2[i][j] = data[i][j];
+            }
+        }
+    });
+
+    socket.on('sendturn', function(data) {
+        if (nxtpiece<6) 
+            return
+        turn = 1;
+        var turntxt = document.getElementById("turn");
+        turntxt.innerHTML = "YOUR TURN";
+    });
+
+    socket.on('sendhit', function(data) {
+    
+    });
+
+    socket.on('sendwin', function(data) {
+        var platxt = document.getElementById("place");
+        platxt.innerHTML = "YOU LOST!";
+        hit.innerHTML = "";
+        hits = 17;
+        var turntxt = document.getElementById("turn");
+        turntxt.innerHTML = "";
+    });
+
+>>>>>>> 38219bad8eb98ca658aa36f318896c2c26a3c689
     var updatetext = function() {
         piecenum.innerHTML = "PIECE: "+ nxtpiece;
         
