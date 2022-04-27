@@ -77,6 +77,31 @@ html, body {
 	color: white;
 }
 
+#logged {
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	height: 20px;
+	width: 100%;
+	text-align: left;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 14px;
+	color: white;
+}
+
+#signout {
+	position: absolute;
+	top: 15px;
+	left: 5px;
+	height: 20px;
+	width: 100%;
+	text-align: left;
+	text-decoration: underline;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 10px;
+	color: #51DB5C;
+}
+
 #reg {
 	position: absolute;
 	top: 5px;

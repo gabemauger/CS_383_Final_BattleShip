@@ -42,6 +42,8 @@
         <div id="header2">
             <div id="login"> Login</div>
             <div id="reg"> Register</div>
+            <div id="logged"></div>	
+            <div id="signout"></div>
             <div id="gamekey">Game key: </div>
             <input type="text" id="key" name="key" placeholder="12345"><br><br>
             <input type="submit" id="submit">	
@@ -74,6 +76,48 @@
         regi.addEventListener("click", function(e) {
             window.location.href = '/regi.html';
         });
+
+        signout.addEventListener("click", function(e) {
+            document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+            window.location.href = '/log.html';
+        });
+
+        if (document.cookie.substring(8).length!=0) {
+            console.log(document.cookie.substring(8));
+            var b = document.getElementById("logged");
+            b.innerHTML = "Logged in as: " + document.cookie.substring(8);
+            var s = document.getElementById("signout");
+            s.innerHTML = "Sign Out";
+            var l = document.getElementById("login");
+            l.innerHTML = "";
+            l.style.borderWidth = "0px";
+            var r = document.getElementById("reg");
+            r.innerHTML = "";
+            r.style.borderWidth = "0px";
+            s.style.top = "15px";
+            s.style.pointerEvents = 'auto';
+            r.style.pointerEvents = 'none';
+            l.style.pointerEvents = 'none';
+            var p = document.getElementById("para5");
+            p.innerHTML = "Your wins are recorded so you can climb to the top of the leaderboard!"
+
+        } else {
+            var b = document.getElementById("logged");
+            b.innerHTML = "";
+            var s = document.getElementById("signout");
+            s.innerHTML = "";
+            var l = document.getElementById("login");
+            l.innerHTML = " Login";
+            l.style.borderWidth = "1px";
+            var r = document.getElementById("reg");
+            r.innerHTML = "Register";
+            r.style.borderWidth = "1px";
+            s.style.top = "200px";
+            b.style.pointerEvents = 'none';
+            s.style.pointerEvents = 'none';
+            r.style.pointerEvents = 'auto';
+            l.style.pointerEvents = 'auto';
+        }
 
     </script>
     <script src='/socket.io/socket.io.js'></script>
