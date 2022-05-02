@@ -12,13 +12,16 @@
         <div id="bg"> 
             <div id="inputbg"></div>
             <img id="loginimg" src="files/boat1.png"></img>
-            <input type="text" id="user" name="user" minlength="3" placeholder="username"><br><br>
+            <form method="post" action="/login">
+                 <input type="text" id="user" name="data[user]" minlength="3" maxlength="20" placeholder="username"><br><br>
+                 <input type="password" id="pass" name="data[password]" minlength="8" placeholder="password"><br><br>
+                 <input type="submit" value="Submit" id="submit">
+             </form>
             <div id="usertxt">Usernames must be at least 3 characters.</div>
-            <input type="password" id="pass" name="pass" minlength="8" placeholder="password"><br><br>
             <div id="passtxt">Passwords must be at least 8 characters.</div>
+            <div id="incorrecttxt"></div>
             <div id="logint">LOGIN</div>
             <div id="regtext">Don't have an account? Register <a href="/regi.html" style="color: #51DB5C;">here</a></div>
-            <input type="submit" id="submit">	
         </div>
 
         <div id="footer">
@@ -54,7 +57,7 @@
         });
 
         lead.addEventListener("click", function(e) {
-            window.location.href = '/lead.html';
+            window.location.href = '/leaderboard';
         });
 
         log.addEventListener("click", function(e) {
@@ -64,6 +67,15 @@
         regi.addEventListener("click", function(e) {
             window.location.href = '/regi.html';
         });
+
+        const query = window.location.search;
+        console.log(query);
+
+        const inc = new URLSearchParams(query);
+        if (inc.has('incorrect')) {
+            var i = document.getElementById("incorrecttxt");
+            i.innerHTML = "Username/Password incorrect.";
+        }
 
     </script>
     <script src='/socket.io/socket.io.js'></script>

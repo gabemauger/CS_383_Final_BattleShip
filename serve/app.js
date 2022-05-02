@@ -36,8 +36,10 @@ window.onload = function() {
         turntxt.innerHTML = "YOUR TURN";
     });
 
-    socket.on('sendhit', function(data) {
-    
+    socket.on('sendhit', function(data, hit) {
+        var boardup = document.getElementById("p1"+data);
+        boardup.src = "files/empty"+hit+".png";
+        boardup.style.zIndex = "1";
     });
 
     socket.on('sendwin', function(data) {
@@ -52,7 +54,7 @@ window.onload = function() {
     var updatetext = function() {
         piecenum.innerHTML = "PIECE: "+ nxtpiece;
         
-        if (nxtpiece>5) {
+        if (nxtpiece==6) {
             for (let i = 0; i < 100; i++) {
                 var p = document.getElementById("p1"+i);
                 p.src = "files/empty5.png";
@@ -66,6 +68,7 @@ window.onload = function() {
             var platxt = document.getElementById("place");
             platxt.innerHTML = "NOW FIGHT!";
             platxt.style.left = "460px";
+            nxtpiece = 7;
     
         } else {
             piecenum.innerHTML = "PIECE: "+ nxtpiece;
@@ -192,7 +195,7 @@ window.onload = function() {
                     hit.innerHTML="HIT!"
                     hits++;
                     console.log(hits);
-                    socket.emit('hit',p);
+                    socket.emit('hit',p, "2");
                     socket.emit('turn');
                     var turntxt = document.getElementById("turn");
                     turntxt.innerHTML = "THEIR TURN";
@@ -203,14 +206,14 @@ window.onload = function() {
                         var platxt = document.getElementById("place");
                         platxt.innerHTML = "YOU WON!";
                         hit.innerHTML = "";
-                        socket.emit('win');
+                        socket.emit('win', document.cookie.substring(8));
                         var turntxt = document.getElementById("turn");
                         turntxt.innerHTML = "";
                     }
                 } else {
                     e.target.src = "files/empty3.png";
                     hit.innerHTML="MISS!"
-                    socket.emit('hit',p);
+                    socket.emit('hit',p, "");
                     socket.emit('turn');
                     var turntxt = document.getElementById("turn");
                     turntxt.innerHTML = "THEIR TURN";

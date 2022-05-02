@@ -21,6 +21,7 @@
           
             <div id="usertxt">Usernames must be at least 3 characters.</div>
             <div id="passtxt">Passwords must be at least 8 characters.</div>
+            <div id="incorrecttxt"></div>
             <div id="logint">REGISTER</div>
             <div id="regtext">Already have an account? Login <a href="/log.html" style="color: #51DB5C;">here</a></div>
 
@@ -59,7 +60,7 @@
         });
 
         lead.addEventListener("click", function(e) {
-            window.location.href = '/lead.html';
+            window.location.href = '/leaderboard';
         });
 
         log.addEventListener("click", function(e) {
@@ -69,6 +70,15 @@
         regi.addEventListener("click", function(e) {
             window.location.href = '/regi.html';
         });
+
+        const query = window.location.search;
+        console.log(query);
+
+        const inc = new URLSearchParams(query);
+        if (inc.has('taken')) {
+            var i = document.getElementById("incorrecttxt");
+            i.innerHTML = "An account with that username has already been registered.";
+        }
 
     </script>
     <script src='/socket.io/socket.io.js'></script>

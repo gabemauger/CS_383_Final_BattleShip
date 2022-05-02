@@ -213,6 +213,19 @@ html, body {
 	background-color: #383838;
 }
 
+#incorrecttxt {
+    position: absolute;
+    top: 700px;
+    left: calc(50% - 150px);
+    height: 20px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 15px;
+    color: #ff0000;
+}
+
 #usertxt {
     position: absolute;
     top: 430px;
@@ -241,7 +254,7 @@ html, body {
 
 #regtext {
     position: absolute;
-    top: 730px;
+    top: 750px;
     left: calc(50% - 150px);
     height: 20px;
     width: 300px;

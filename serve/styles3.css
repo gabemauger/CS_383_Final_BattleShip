@@ -239,6 +239,19 @@ html, body {
     color: #51DB5C;
 }
 
+#incorrecttxt {
+    position: absolute;
+    top: 600px;
+    left: calc(50% - 150px);
+    height: 20px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 15px;
+    color: #ff0000;
+}
+
 #regtext {
     position: absolute;
     top: 630px;
